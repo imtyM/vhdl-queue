@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+entity Queue is 
+	port (
+			A_client : in std_logic;
+			N_client: in std_logic;
+			
+			debug: buffer std_logic
+			);
+end Queue;
+
+architecture control of Queue is
+signal count : integer:= 1;
+signal N_Client_count : integer:=0;
+signal nibbleAddress : std_logic_vector (3 downto 0);
+begin
+
+		clock : process(A_client, N_client)
+			begin
+			if( N_client = not N_client )then
+				debug <= not debug
+				end if;
+			end if;
+			
+		end process clock;
+
+
+end control;
+		

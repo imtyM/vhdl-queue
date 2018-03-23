@@ -1,0 +1,812 @@
+Analysis & Synthesis report for ATM
+Fri Oct 20 08:35:26 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Div2
+ 14. Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Div1
+ 16. Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Mod2
+ 17. Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Mod1
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Oct 20 08:35:25 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ATM                                             ;
+; Top-level Entity Name              ; ATM                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 7,412                                           ;
+;     Total combinational functions  ; 7,412                                           ;
+;     Dedicated logic registers      ; 356                                             ;
+; Total registers                    ; 356                                             ;
+; Total pins                         ; 35                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; ATM                ; ATM                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
+; ATM.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Altera/13.0sp1/ATM/ATM.bdf                                         ;         ;
+; Stream.vhd                       ; yes             ; User VHDL File                     ; C:/Altera/13.0sp1/ATM/Stream.vhd                                      ;         ;
+; output_files/Queue.vhd           ; yes             ; User VHDL File                     ; C:/Altera/13.0sp1/ATM/output_files/Queue.vhd                          ;         ;
+; segControl.vhd                   ; yes             ; User VHDL File                     ; C:/Altera/13.0sp1/ATM/segControl.vhd                                  ;         ;
+; Servers.vhd                      ; yes             ; User VHDL File                     ; C:/Altera/13.0sp1/ATM/Servers.vhd                                     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc      ;         ;
+; db/lpm_divide_qlo.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/lpm_divide_qlo.tdf                           ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/abs_divider_4dg.tdf                          ;         ;
+; db/alt_u_div_k5f.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/alt_u_div_k5f.tdf                            ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/add_sub_lkc.tdf                              ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/add_sub_mkc.tdf                              ;         ;
+; db/lpm_abs_0s9.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/lpm_abs_0s9.tdf                              ;         ;
+; db/lpm_divide_7so.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/lpm_divide_7so.tdf                           ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/abs_divider_kbg.tdf                          ;         ;
+; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/alt_u_div_k2f.tdf                            ;         ;
+; db/lpm_abs_gq9.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Altera/13.0sp1/ATM/db/lpm_abs_gq9.tdf                              ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 7,412    ;
+;                                             ;          ;
+; Total combinational functions               ; 7412     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 2450     ;
+;     -- 3 input functions                    ; 2285     ;
+;     -- <=2 input functions                  ; 2677     ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 4920     ;
+;     -- arithmetic mode                      ; 2492     ;
+;                                             ;          ;
+; Total registers                             ; 356      ;
+;     -- Dedicated logic registers            ; 356      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 35       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 292      ;
+; Total fan-out                               ; 22567    ;
+; Average fan-out                             ; 2.89     ;
++---------------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
+; |ATM                                     ; 7412 (0)          ; 356 (0)      ; 0           ; 0            ; 0       ; 0         ; 35   ; 0            ; |ATM                                                                                                               ; work         ;
+;    |Queue:inst1|                         ; 64 (64)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|Queue:inst1                                                                                                   ; work         ;
+;    |Servers:inst4|                       ; 278 (278)         ; 224 (224)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|Servers:inst4                                                                                                 ; work         ;
+;    |Stream:inst|                         ; 124 (124)         ; 68 (68)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|Stream:inst                                                                                                   ; work         ;
+;    |segControl:inst2|                    ; 6946 (468)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2                                                                                              ; work         ;
+;       |lpm_divide:Div0|                  ; 523 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div0                                                                              ; work         ;
+;          |lpm_divide_7so:auto_generated| ; 523 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div0|lpm_divide_7so:auto_generated                                                ; work         ;
+;             |abs_divider_kbg:divider|    ; 523 (35)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div0|lpm_divide_7so:auto_generated|abs_divider_kbg:divider                        ; work         ;
+;                |alt_u_div_k2f:divider|   ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div0|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|  ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div0|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num ; work         ;
+;       |lpm_divide:Div1|                  ; 515 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div1                                                                              ; work         ;
+;          |lpm_divide_7so:auto_generated| ; 515 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div1|lpm_divide_7so:auto_generated                                                ; work         ;
+;             |abs_divider_kbg:divider|    ; 515 (35)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div1|lpm_divide_7so:auto_generated|abs_divider_kbg:divider                        ; work         ;
+;                |alt_u_div_k2f:divider|   ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div1|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div1|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num ; work         ;
+;       |lpm_divide:Div2|                  ; 515 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div2                                                                              ; work         ;
+;          |lpm_divide_7so:auto_generated| ; 515 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div2|lpm_divide_7so:auto_generated                                                ; work         ;
+;             |abs_divider_kbg:divider|    ; 515 (35)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div2|lpm_divide_7so:auto_generated|abs_divider_kbg:divider                        ; work         ;
+;                |alt_u_div_k2f:divider|   ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div2|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Div2|lpm_divide_7so:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num ; work         ;
+;       |lpm_divide:Mod0|                  ; 1593 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod0                                                                              ; work         ;
+;          |lpm_divide_qlo:auto_generated| ; 1593 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod0|lpm_divide_qlo:auto_generated                                                ; work         ;
+;             |abs_divider_4dg:divider|    ; 1593 (10)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider                        ; work         ;
+;                |alt_u_div_k5f:divider|   ; 1538 (1538)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|  ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num ; work         ;
+;       |lpm_divide:Mod1|                  ; 1666 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod1                                                                              ; work         ;
+;          |lpm_divide_qlo:auto_generated| ; 1666 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod1|lpm_divide_qlo:auto_generated                                                ; work         ;
+;             |abs_divider_4dg:divider|    ; 1666 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod1|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider                        ; work         ;
+;                |alt_u_div_k5f:divider|   ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod1|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|  ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod1|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num ; work         ;
+;       |lpm_divide:Mod2|                  ; 1666 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod2                                                                              ; work         ;
+;          |lpm_divide_qlo:auto_generated| ; 1666 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod2|lpm_divide_qlo:auto_generated                                                ; work         ;
+;             |abs_divider_4dg:divider|    ; 1666 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod2|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider                        ; work         ;
+;                |alt_u_div_k5f:divider|   ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod2|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|  ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ATM|segControl:inst2|lpm_divide:Mod2|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num ; work         ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------+------------------------+
+; segControl:inst2|q_units[28]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[27]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[26]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[25]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[24]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[23]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[22]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[21]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[20]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[19]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[18]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[17]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[16]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[15]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[14]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[13]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[12]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[11]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[10]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[9]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[8]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[7]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[6]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[5]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[4]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[3]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[2]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[1]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[0]                         ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[30]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[31]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|q_units[29]                        ; segControl:inst2|q_units ; yes                    ;
+; segControl:inst2|A_units[0]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[1]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[2]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[3]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[4]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[5]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[6]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[7]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[8]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[9]                         ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[10]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[11]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[12]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[13]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[14]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[15]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[16]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[17]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[18]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[19]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[20]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[21]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[22]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[23]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[24]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[25]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[26]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[27]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[28]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[29]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[30]                        ; segControl:inst2|A_units ; yes                    ;
+; segControl:inst2|A_units[31]                        ; segControl:inst2|A_units ; yes                    ;
+; Number of user-specified and inferred latches = 64  ;                          ;                        ;
++-----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 356   ;
+; Number of registers using Synchronous Clear  ; 96    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 94    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Servers:inst4|N_server[31]             ; 95      ;
+; Servers:inst4|N_server[0]              ; 12      ;
+; Servers:inst4|q_server[31]             ; 108     ;
+; Servers:inst4|q_server[0]              ; 10      ;
+; Servers:inst4|A_server[31]             ; 110     ;
+; Servers:inst4|A_server[0]              ; 11      ;
+; Stream:inst|count[0]                   ; 1       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |ATM|segControl:inst2|N_units[8] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ATM|segControl:inst2|A_0[0]     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ATM|segControl:inst2|A_1[4]     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |ATM|segControl:inst2|A_0[2]     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |ATM|segControl:inst2|A_1[6]     ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |ATM|segControl:inst2|N_0[4]     ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |ATM|segControl:inst2|N_1[0]     ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |ATM|segControl:inst2|N_0[2]     ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |ATM|segControl:inst2|N_1[2]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_qlo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_7so ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_7so ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_7so ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_qlo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: segControl:inst2|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_qlo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:11     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 20 08:35:10 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ATM -c ATM
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file atm.bdf
+    Info (12023): Found entity 1: ATM
+Info (12021): Found 2 design units, including 1 entities, in source file stream.vhd
+    Info (12022): Found design unit 1: Stream-control
+    Info (12023): Found entity 1: Stream
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/queue.vhd
+    Info (12022): Found design unit 1: Queue-control
+    Info (12023): Found entity 1: Queue
+Info (12021): Found 2 design units, including 1 entities, in source file segcontrol.vhd
+    Info (12022): Found design unit 1: segControl-control
+    Info (12023): Found entity 1: segControl
+Info (12021): Found 2 design units, including 1 entities, in source file servers.vhd
+    Info (12022): Found design unit 1: Servers-control
+    Info (12023): Found entity 1: Servers
+Info (12127): Elaborating entity "ATM" for the top level hierarchy
+Info (12128): Elaborating entity "segControl" for hierarchy "segControl:inst2"
+Info (10041): Inferred latch for "q_units[0]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[1]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[2]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[3]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[4]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[5]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[6]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[7]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[8]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[9]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[10]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[11]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[12]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[13]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[14]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[15]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[16]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[17]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[18]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[19]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[20]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[21]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[22]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[23]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[24]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[25]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[26]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[27]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[28]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[29]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[30]" at segControl.vhd(36)
+Info (10041): Inferred latch for "q_units[31]" at segControl.vhd(36)
+Info (10041): Inferred latch for "A_units[0]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[1]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[2]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[3]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[4]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[5]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[6]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[7]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[8]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[9]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[10]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[11]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[12]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[13]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[14]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[15]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[16]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[17]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[18]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[19]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[20]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[21]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[22]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[23]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[24]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[25]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[26]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[27]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[28]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[29]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[30]" at segControl.vhd(35)
+Info (10041): Inferred latch for "A_units[31]" at segControl.vhd(35)
+Info (12128): Elaborating entity "Servers" for hierarchy "Servers:inst4"
+Warning (10540): VHDL Signal Declaration warning at Servers.vhd(44): used explicit default value for signal "q" because signal was never assigned a value
+Info (12128): Elaborating entity "Queue" for hierarchy "Queue:inst1"
+Info (12128): Elaborating entity "Stream" for hierarchy "Stream:inst"
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "segControl:inst2|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "segControl:inst2|Div2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "segControl:inst2|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "segControl:inst2|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "segControl:inst2|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "segControl:inst2|Mod1"
+Info (12130): Elaborated megafunction instantiation "segControl:inst2|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "segControl:inst2|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qlo.tdf
+    Info (12023): Found entity 1: lpm_divide_qlo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k5f.tdf
+    Info (12023): Found entity 1: alt_u_div_k5f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_0s9.tdf
+    Info (12023): Found entity 1: lpm_abs_0s9
+Info (12130): Elaborated megafunction instantiation "segControl:inst2|lpm_divide:Div2"
+Info (12133): Instantiated megafunction "segControl:inst2|lpm_divide:Div2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_7so.tdf
+    Info (12023): Found entity 1: lpm_divide_7so
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
+    Info (12023): Found entity 1: alt_u_div_k2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_gq9.tdf
+    Info (12023): Found entity 1: lpm_abs_gq9
+Info (13014): Ignored 186 buffer(s)
+    Info (13016): Ignored 186 CARRY_SUM buffer(s)
+Warning (13012): Latch segControl:inst2|q_units[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[0]
+Warning (13012): Latch segControl:inst2|q_units[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|q_units[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|q_server[31]
+Warning (13012): Latch segControl:inst2|A_units[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[0]
+Warning (13012): Latch segControl:inst2|A_units[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Warning (13012): Latch segControl:inst2|A_units[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Servers:inst4|A_server[31]
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 7447 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 30 output pins
+    Info (21061): Implemented 7412 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 130 warnings
+    Info: Peak virtual memory: 589 megabytes
+    Info: Processing ended: Fri Oct 20 08:35:26 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
+
+

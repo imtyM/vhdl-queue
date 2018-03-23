@@ -1,0 +1,125 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'Servers:inst4|A_server[0]'
+Slack : -151.885
+TNS   : -4814.489
+
+Type  : Slow Model Setup 'Servers:inst4|q_server[0]'
+Slack : -147.035
+TNS   : -4657.521
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -8.620
+TNS   : -1518.164
+
+Type  : Slow Model Setup 'Stream:inst|N_Client'
+Slack : -3.512
+TNS   : -67.166
+
+Type  : Slow Model Setup 'Stream:inst|A_Client'
+Slack : -3.502
+TNS   : -67.051
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.699
+TNS   : -9.692
+
+Type  : Slow Model Hold 'Servers:inst4|q_server[0]'
+Slack : -1.730
+TNS   : -2.264
+
+Type  : Slow Model Hold 'Servers:inst4|A_server[0]'
+Slack : -1.442
+TNS   : -1.550
+
+Type  : Slow Model Hold 'Stream:inst|A_Client'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Hold 'Stream:inst|N_Client'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.631
+TNS   : -358.455
+
+Type  : Slow Model Minimum Pulse Width 'Stream:inst|A_Client'
+Slack : -0.611
+TNS   : -39.104
+
+Type  : Slow Model Minimum Pulse Width 'Stream:inst|N_Client'
+Slack : -0.611
+TNS   : -39.104
+
+Type  : Slow Model Minimum Pulse Width 'Servers:inst4|A_server[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'Servers:inst4|q_server[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Servers:inst4|A_server[0]'
+Slack : -58.764
+TNS   : -1859.622
+
+Type  : Fast Model Setup 'Servers:inst4|q_server[0]'
+Slack : -57.114
+TNS   : -1806.211
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.591
+TNS   : -423.140
+
+Type  : Fast Model Setup 'Stream:inst|N_Client'
+Slack : -0.897
+TNS   : -10.492
+
+Type  : Fast Model Setup 'Stream:inst|A_Client'
+Slack : -0.892
+TNS   : -10.440
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.727
+TNS   : -24.675
+
+Type  : Fast Model Hold 'Servers:inst4|q_server[0]'
+Slack : -1.085
+TNS   : -3.763
+
+Type  : Fast Model Hold 'Servers:inst4|A_server[0]'
+Slack : -1.032
+TNS   : -2.240
+
+Type  : Fast Model Hold 'Stream:inst|A_Client'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'Stream:inst|N_Client'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -293.380
+
+Type  : Fast Model Minimum Pulse Width 'Stream:inst|A_Client'
+Slack : -0.500
+TNS   : -32.000
+
+Type  : Fast Model Minimum Pulse Width 'Stream:inst|N_Client'
+Slack : -0.500
+TNS   : -32.000
+
+Type  : Fast Model Minimum Pulse Width 'Servers:inst4|A_server[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'Servers:inst4|q_server[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
